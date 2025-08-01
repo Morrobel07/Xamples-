@@ -28,3 +28,4 @@ C:\Users\Lenovo\Desktop\ASP\LanguageFeatures\obj\Debug\net9.0\refint\LanguageFea
 C:\Users\Lenovo\Desktop\ASP\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.pdb
 C:\Users\Lenovo\Desktop\ASP\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.genruntimeconfig.cache
 C:\Users\Lenovo\Desktop\ASP\LanguageFeatures\obj\Debug\net9.0\ref\LanguageFeatures.dll
+C:\Users\Lenovo\Desktop\ASP\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.sourcelink.json
