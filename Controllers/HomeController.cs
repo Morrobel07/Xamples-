@@ -109,5 +109,11 @@ namespace LanguageFeatures.Controllers
             var listaNombres = new List<string> { "Juan", "Ana", "Pedro", "Maria" };
             return View(listaNombres);
         }
+
+        public IActionResult Pares()
+        {
+            NumerosPares numerospares = new NumerosPares(20);
+            return View(numerospares);
+        }
     }
 }

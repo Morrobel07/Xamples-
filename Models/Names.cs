@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 
 namespace LanguageFeatures.Models;
 
@@ -20,7 +21,7 @@ public class Nombres : IEnumerable<string>
 
     }
 
-    System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+    IEnumerator IEnumerable.GetEnumerator()
     {
         return this.GetEnumerator();
     }
