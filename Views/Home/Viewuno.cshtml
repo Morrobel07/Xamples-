@@ -1,0 +1,25 @@
+@model IEnumerable<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Xamples - Viewuno</title>
+</head>
+
+<body>
+    <h1>Lista de Nombres</h1>
+    <ul>
+        @foreach (string nombre in Model)
+        {
+            <li>@nombre</li>
+        }
+    </ul>
+</body>
+
+</html>
+
+
