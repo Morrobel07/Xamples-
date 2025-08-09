@@ -13,84 +13,106 @@ namespace LanguageFeatures.Controllers
 {
     public class HomeController : Controller
     {
-        public ViewResult Index()
+
+        bool FilterByPrice(Product? p)
         {
-            //Product[]? products = Product.GetProducts();
-
-            // return View(new string[] { products?[0].Name ?? "No products available" });
-            // return View(new string[] { products?[0]!.Name });
-
-            //     return View(new string[]{
-            //     $"Name:{products?[0]?.Name}, Price:{products?[0]?.Price:C2}"
-            //    });
-            //
-            // Dictionary<string, Product> products = new ()
-
-            // {
-            //     ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
-            //     ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
-            // };
-            // return View("Index", products.Keys);
-            // object[] data = new object[] {
-
-            //     275M,29.25M, "apple","oranfe",100,10
-            //  };
-            // decimal total = 0;
-
-            // for (int i = 0; i < data.Length; i++)
-            // {
-            //     if (data[i] is decimal d)
-            //     {
-            //         total += d;
-            //     }
-
-
-
-            // }
-
-            // return View("Index", new string[] { $"Total: {total:C2}" });
-
-            //for (var i = 0; i < data.Length; i++)
-            // {
-            //     switch (data[i]) {
-            //         case decimal decimalValue:
-            //             total += decimalValue;
-            //             break;
-            //         case int intValue when intValue > 50:
-            //             total += intValue;
-            //             break;
-
-            //     }
-
-
-
-            // }
-            // return View("Index", new string[] { $"Total:{total:C2}" });
-
-            // ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
-
-            // decimal cartTotal = cart.TotalPricess();
-
-            // return View("Index", new string[] { $"Total : {cartTotal:C2}" });
-
-            ShoppingCart cart =
-            new ShoppingCart { Products = Product.GetProducts() };
-
-            Product[] productArray = {
-                new Product { Name = "Kayac",Price = 275M},
-                new Product { Name="Lifejacket", Price = 48.95M},
-                new Product {Name = "Soccer ball", Price = 19.50M},
-                new Product {Name = "Corner flag", Price = 34.95M}
-            };
-
-            //decimal cartTotal = cart.TotalPrices();
-            decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
-
-            return View("Index", new string[] {
-                //$"Cart Total:{cartTotal:C2}",
-                $"Array Total:{arrayTotal:C2}"
-            });
+            return (p?.Price ?? 0) >= 20;
         }
+        public ViewResult Index() => View(Product.GetProducts().Select(p => p?.Name));
+
+
+
+        //Product[]? products = Product.GetProducts();
+
+        // return View(new string[] { products?[0].Name ?? "No products available" });
+        // return View(new string[] { products?[0]!.Name });
+
+        //     return View(new string[]{
+        //     $"Name:{products?[0]?.Name}, Price:{products?[0]?.Price:C2}"
+        //    });
+        //
+        // Dictionary<string, Product> products = new ()
+
+        // {
+        //     ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+        //     ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
+        // };
+        // return View("Index", products.Keys);
+        // object[] data = new object[] {
+
+        //     275M,29.25M, "apple","oranfe",100,10
+        //  };
+        // decimal total = 0;
+
+        // for (int i = 0; i < data.Length; i++)
+        // {
+        //     if (data[i] is decimal d)
+        //     {
+        //         total += d;
+        //     }
+
+
+
+        // }
+
+        // return View("Index", new string[] { $"Total: {total:C2}" });
+
+        //for (var i = 0; i < data.Length; i++)
+        // {
+        //     switch (data[i]) {
+        //         case decimal decimalValue:
+        //             total += decimalValue;
+        //             break;
+        //         case int intValue when intValue > 50:
+        //             total += intValue;
+        //             break;
+
+        //     }
+
+
+
+        // }
+        // return View("Index", new string[] { $"Total:{total:C2}" });
+
+        // ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
+
+        // decimal cartTotal = cart.TotalPricess();
+
+        // return View("Index", new string[] { $"Total : {cartTotal:C2}" });
+
+        //     ShoppingCart cart =
+        //     new ShoppingCart { Products = Product.GetProducts() };
+
+        //     Product[] productArray = {
+        //         new Product { Name = "Kayac",Price = 275M},
+        //         new Product { Name="Lifejacket", Price = 48.95M},
+        //         new Product {Name = "Soccer ball", Price = 19.50M},
+        //         new Product {Name = "Corner flag", Price = 34.95M}
+        //     };
+
+        //     Func<Product?, bool> nameFilter = delegate (Product? prod)
+        //     {
+        //         return prod?.Name?[0] == 'S';
+        //     };
+
+        //     //decimal cartTotal = cart.TotalPrices();
+        //     //decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
+        //     decimal priceFilterTotal = productArray
+        //     .Filter(p => (p?.Price ?? 0) >= 20)
+        //     .TotalPrices();
+
+        //     decimal nameFilterTotal = productArray
+        //     .Filter(p => p?.Name?[0] == 'S')
+        //     .TotalPrices();
+
+        //     return View("Index", new string[] {
+        //         $"Cart Total:{priceFilterTotal:C2}",
+        //         $"Array Total:{nameFilterTotal:C2}"
+        //     });
+        // return View(Product.GetProducts().Select(p => p?.Name));
+
+
+
 
         public IActionResult Viewuno()
         {

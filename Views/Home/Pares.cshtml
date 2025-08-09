@@ -1,15 +1,26 @@
 @model IEnumerable<int>
 
-    <!DOCTYPE html>
-    <html>
-        <body>
-            <h2>Números Pares hasta el límite</h2>
-
-<ul>
-@foreach (var num in Model)
-{
-    <li>@num</li>
+@{
+    Layout = null;
 }
-</ul>
-        </body>
-    </html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Números Pares</title>
+</head>
+
+<body>
+    <h2>Números Pares hasta el límite</h2>
+
+    <ul>
+        @foreach (var num in Model)
+        {
+            <li>@num</li>
+        }
+    </ul>
+</body>
+
+</html>

@@ -4,8 +4,10 @@ namespace LanguageFeatures.Models
 {
     public class Product
     {
-        public string? Name { get; set; } 
+        public string? Name { get; set; }
         public decimal? Price { get; set; }
+
+        public bool NameBeginsWithS => Name?[0] == 'S';
 
         public static Product[] GetProducts()
         {
@@ -21,7 +23,7 @@ namespace LanguageFeatures.Models
                 Price = 48.95M
             };
 
-            return new Product[] { Kayak, Lifejacket };
+            return new Product[] { Kayak, Lifejacket, null };
         }
 
     }
